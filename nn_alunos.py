@@ -149,7 +149,7 @@ def build_sets(f):
     #print (linha[1:17])
     #translate(linha)
     # pass
-##
+
 def translate(lista):
     """Recebe cada lista de valores e transforma-a num padrao de treino.
     Cada padrao tem o formato [nome_do_animal, padrao_de_entrada, tipo_do_animal, padrao_de_saida].
@@ -167,21 +167,21 @@ def translate(lista):
     padroes_de_saida=[0,0,0,0,0,0,0]
 
 
-    for x in range(len(padroes_de_entrada)):  # PERNAS
-        legs = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        for j in range(len(legs)):
-            if j == padroes_de_entrada[
-                12]:  # qd index do legs = ao numero do atributo(numero de pernas) mete essa posiçao a 1
+      # PERNAS
+    for j in range(len(legs)):
+        if j == padroes_de_entrada[12]:  # qd index do legs = ao numero do atributo(numero de pernas) mete essa posiçao a 1
                 legs[j] = 1
-        padroes_de_entrada = padroes_de_entrada[:12] + legs + padroes_de_entrada[13:]
+    padroes_de_entrada = padroes_de_entrada[:12] + legs + padroes_de_entrada[13:]
 
-    for i in range(len(lista)):
-        for x in range(len(padroes_de_saida)):
-            padroes_de_saida = [0, 0, 0, 0, 0, 0, 0]
-            for j in range(len(tipos)):
-                if tipos[j] == lista[17]:
-                    padroes_de_saida[j] = 1
-        padrao_treino.append([lista[0], padroes_de_entrada[i], lista[17], padroes_de_saida])
+    #FALTA ESTE
+
+#    for i in range(len(lista)):
+#        for x in range(len(padroes_de_saida)):
+#            padroes_de_saida = [0, 0, 0, 0, 0, 0, 0]
+#            for j in range(len(tipos)):
+#                if tipos[j] == lista[17]:
+#                    padroes_de_saida[j] = 1
+#        padrao_treino.append([lista[0], padroes_de_entrada[i], lista[17], padroes_de_saida])
 
 
     print(padroes_de_entrada)
