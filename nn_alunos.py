@@ -181,5 +181,5 @@ if __name__ == "__main__":
     train_or()
     train_xor()
 
-    print('Oi')
+
     #run()
