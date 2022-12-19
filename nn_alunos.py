@@ -137,21 +137,17 @@ def build_sets(f):
     Finalmente, devolve duas listas, uma com os primeiros 67 padroes (conjunto de treino)
     e a segunda com os restantes (conjunto de teste)"""
     lista_valores = []
-
+    linha = ''
     with open(f, 'r') as f:
         for line in f:
             linha = line[0:len(line)-1].strip("[]").split(',')
-            lista_valores.append(linha)
+            for i in range(len(linha)):
+                if linha[i].isdigit():
+                    linha[i] = int(linha[i])
+            translate(linha)
 
-
-    for i in range(len(lista_valores)): # coloca os digitos em int
-        for j in range(len(lista_valores[i])):
-            if lista_valores[i][j].isdigit():
-                lista_valores[i][j] = int(lista_valores[i][j])
-
-
-    #print(lista_valores)
-    translate(lista_valores)
+    #print (linha[1:17])
+    #translate(linha)
     # pass
 
 def translate(lista):
@@ -165,29 +161,30 @@ def translate(lista):
     que estiver a 1 corresponde ao tipo do animal. E.g., [0 0 1 0 0 0 0] -> reptile.
     """
     padrao_treino = []
-    padroes_de_entrada =[]# lista com lista de atributos
+    padroes_de_entrada =lista[1:17]# lista com lista de atributos
     legs = [0,0,0,0,0,0,0,0,0,0]
     tipos=['mammal', 'bird', 'reptile', 'fish', 'amphibian', 'insect', 'invertebrate']
     padroes_de_saida=[0,0,0,0,0,0,0]
-    for i in range(len(lista)):
-        padroes_de_entrada.append(lista[i][1:17])
 
 
-    for x in range(len(padroes_de_entrada)):# PERNAS
+    for x in range(len(padroes_de_entrada)):  # PERNAS
         legs = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         for j in range(len(legs)):
-            if j == padroes_de_entrada[x][12]: # qd index do legs = ao numero do atributo(numero de pernas) mete essa posiçao a 1
+            if j == padroes_de_entrada[
+                12]:  # qd index do legs = ao numero do atributo(numero de pernas) mete essa posiçao a 1
                 legs[j] = 1
-        padroes_de_entrada[x] = padroes_de_entrada[x][:12] + legs + padroes_de_entrada[x][13:]
+        padroes_de_entrada = padroes_de_entrada[:12] + legs + padroes_de_entrada[13:]
 
     for i in range(len(lista)):
         for x in range(len(padroes_de_saida)):
             padroes_de_saida = [0, 0, 0, 0, 0, 0, 0]
             for j in range(len(tipos)):
-                if tipos[j] == lista[i][17]:
+                if tipos[j] == lista[17]:
                     padroes_de_saida[j] = 1
-        padrao_treino.append([lista[i][0], padroes_de_entrada[i], lista[i][17], padroes_de_saida])
+        padrao_treino.append([lista[0], padroes_de_entrada[i], lista[17], padroes_de_saida])
 
+
+    print(padroes_de_entrada)
     #pass
 def train_zoo(training_set):
     """cria a rede e chama a funçao iterate para a treinar. Use 300 iteracoes"""
