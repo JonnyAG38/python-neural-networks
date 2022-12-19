@@ -165,15 +165,20 @@ def translate(lista):
     que estiver a 1 corresponde ao tipo do animal. E.g., [0 0 1 0 0 0 0] -> reptile.
     """
     padrao_treino = []
+    lista_atributos = []
+    for i in range(len(lista)):
+        lista_atributos.append(lista[i][1:17])
 
-   # print(padrao_treino)
-    with open("info.txt", 'r') as f:
-        content = f.readlines()
-        legs=content[18][17:].strip("{" "}\n").split()
-        print(legs)
-        for i in range(len(lista)):
-            for j in range(len(lista[i])):
+    for x in range(len(lista_atributos)):
+        if lista_atributos[x][12] == 4:
 
+
+
+
+
+
+    #padrao_treino.append([lista[i][0]], )
+    print(lista_atributos)
 
 
     #pass
