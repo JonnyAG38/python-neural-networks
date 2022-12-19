@@ -188,7 +188,7 @@ def translate(lista):
                 if tipos[j] == lista[i][17]:
                     padroes_de_saida[j] = 1
 
-
+aaaaaaaaaaa
     for i in range(len(lista)):
         padrao_treino.append([lista[i][0], padroes_de_entrada[i], lista[i][17], padroes_de_saida])
 
