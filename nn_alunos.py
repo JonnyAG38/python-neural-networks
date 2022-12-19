@@ -140,9 +140,7 @@ def build_sets(f):
 
     with open(f, 'r') as f:
         for line in f:
-            lista_valores+=line.strip().split('\n')
-
-
+            lista_valores += line.strip().split('\n')
 
     print(lista_valores)
     #pass
