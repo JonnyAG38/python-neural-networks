@@ -137,7 +137,7 @@ def build_sets(f):
     Finalmente, devolve duas listas, uma com os primeiros 67 padroes (conjunto de treino)
     e a segunda com os restantes (conjunto de teste)"""
     lista_valores = []
-    #,abre o f le o f,le cada linha, tranforma-a numa lista de valores
+
     with open(f, 'r') as f:
         for line in f:
             lista_valores+=line.strip().split('\n')
@@ -145,7 +145,7 @@ def build_sets(f):
 
 
     print(lista_valores)
-    pass
+    #pass
 
 
 def translate(lista):
