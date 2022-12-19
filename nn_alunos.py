@@ -174,8 +174,12 @@ def test_zoo(net, test_set):
     
     pass
 
+
+
 if __name__ == "__main__":
     train_and()
     train_or()
     train_xor()
+
+    print('Oi')
     #run()
