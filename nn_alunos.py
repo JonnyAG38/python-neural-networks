@@ -150,7 +150,8 @@ def build_sets(f):
                 lista_valores[i][j] = int(lista_valores[i][j])
 
 
-    print(lista_valores)
+    #print(lista_valores)
+    translate(lista_valores)
     # pass
 
 def translate(lista):
@@ -165,7 +166,17 @@ def translate(lista):
     """
     padrao_treino = []
 
-    pass
+   # print(padrao_treino)
+    with open("info.txt", 'r') as f:
+        content = f.readlines()
+        legs=content[18][17:].strip("{" "}\n").split()
+        print(legs)
+        for i in range(len(lista)):
+            for j in range(len(lista[i])):
+
+
+
+    #pass
         
 
 def train_zoo(training_set):
