@@ -165,13 +165,18 @@ def translate(lista):
     que estiver a 1 corresponde ao tipo do animal. E.g., [0 0 1 0 0 0 0] -> reptile.
     """
     padrao_treino = []
-    lista_atributos = []
+    lista_atributos = []# lista com lista de atributos
+    legs = [0,0,0,0,0,0,0,0,0,0]
     for i in range(len(lista)):
         lista_atributos.append(lista[i][1:17])
 
     for x in range(len(lista_atributos)):
-        if lista_atributos[x][12] == 4:
-            lista_atributos[x][12] = [0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+        for j in range(len(legs)):
+            legs= [0,0,0,0,0,0,0,0,0,0]
+            if j == lista_atributos[x][12]: # qd index do legs = ao numero do atributo(numero de pernas) mete essa posiçao a 1
+                legs[j] = 1
+                lista_atributos[x] = lista_atributos[x][:12] + legs + lista_atributos[x][13:]
+
 
 
 
