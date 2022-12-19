@@ -144,7 +144,7 @@ def build_sets(f):
             val = line[0:len(line)-1].strip("[]").split(',')
             lista_valores.append(val)
 
-    print(lista_valores)aaaaa
+    print(lista_valores)
     #pass
 
 
