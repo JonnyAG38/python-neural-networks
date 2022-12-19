@@ -139,8 +139,10 @@ def build_sets(f):
     lista_valores = []
 
     with open(f, 'r') as f:
+
         for line in f:
-            lista_valores += line.strip().split('\n')
+            val = line[0:len(line)-1].strip("[]").split(',')
+            lista_valores.append(val)
 
     print(lista_valores)
     #pass
