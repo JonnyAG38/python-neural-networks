@@ -149,7 +149,7 @@ def build_sets(f):
     #print (linha[1:17])
     #translate(linha)
     # pass
-
+##
 def translate(lista):
     """Recebe cada lista de valores e transforma-a num padrao de treino.
     Cada padrao tem o formato [nome_do_animal, padrao_de_entrada, tipo_do_animal, padrao_de_saida].
