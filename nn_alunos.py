@@ -139,14 +139,17 @@ def build_sets(f):
     lista_valores = []
 
     with open(f, 'r') as f:
-
         for line in f:
-            val = line[0:len(line)-1].strip("[]").split(',')
-            lista_valores.append(val)
+            linha = line[0:len(line)-1].strip("[]").split(',')
+            lista_valores.append(linha)
 
-    print(lista_valores)
+
+    for i in range(len(lista_valores)):
+        for j in range(len(lista_valores[i])):
+            if lista_valores[i][j].isdigit():
+                lista_valores[i][j] = int(lista_valores[i][j])
     #pass
-
+    print(lista_valores)
 
 def translate(lista):
     """Recebe cada lista de valores e transforma-a num padrao de treino.
