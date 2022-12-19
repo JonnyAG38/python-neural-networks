@@ -173,18 +173,14 @@ def translate(lista):
                 legs[j] = 1
     padroes_de_entrada = padroes_de_entrada[:12] + legs + padroes_de_entrada[13:]
 
-    #FALTA ESTE
 
-#    for i in range(len(lista)):
-#        for x in range(len(padroes_de_saida)):
-#            padroes_de_saida = [0, 0, 0, 0, 0, 0, 0]
-#            for j in range(len(tipos)):
-#                if tipos[j] == lista[17]:
-#                    padroes_de_saida[j] = 1
-#        padrao_treino.append([lista[0], padroes_de_entrada[i], lista[17], padroes_de_saida])
+    for i in range(len(tipos)):
+        if tipos[i] == lista[17]:
+            padroes_de_saida[i] = 1
+    padrao_treino.append([lista[0], padroes_de_entrada, lista[17], padroes_de_saida])
 
 
-    print(padroes_de_entrada)
+    print(padrao_treino)
     #pass
 def train_zoo(training_set):
     """cria a rede e chama a funçao iterate para a treinar. Use 300 iteracoes"""
