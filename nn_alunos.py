@@ -136,7 +136,15 @@ def build_sets(f):
     o padrao de treino. Estes padroes são colocados numa lista 
     Finalmente, devolve duas listas, uma com os primeiros 67 padroes (conjunto de treino)
     e a segunda com os restantes (conjunto de teste)"""
-    
+    lista_valores = []
+    #,abre o f le o f,le cada linha, tranforma-a numa lista de valores
+    with open(f, 'r') as f:
+        for line in f:
+            lista_valores+=line.strip().split('\n')
+
+
+
+    print(lista_valores)
     pass
 
 
@@ -177,9 +185,10 @@ def test_zoo(net, test_set):
 
 
 if __name__ == "__main__":
-    train_and()
-    train_or()
-    train_xor()
+    #train_and()
+    #train_or()
+    #train_xor()
+    build_sets('zoo.txt')
 
 
     #run()
