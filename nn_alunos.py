@@ -171,7 +171,7 @@ def translate(lista):
 
     for x in range(len(lista_atributos)):
         if lista_atributos[x][12] == 4:
-
+            lista_atributos[x][12] = [0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
 
 
 
