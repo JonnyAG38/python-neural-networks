@@ -188,15 +188,7 @@ def translate(lista):
                     padroes_de_saida[j] = 1
         padrao_treino.append([lista[i][0], padroes_de_entrada[i], lista[i][17], padroes_de_saida])
 
-
-
-
-    print(padrao_treino)
-
-
     #pass
-        
-
 def train_zoo(training_set):
     """cria a rede e chama a funçao iterate para a treinar. Use 300 iteracoes"""
     
