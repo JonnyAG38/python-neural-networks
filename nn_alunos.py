@@ -148,8 +148,10 @@ def build_sets(f):
         for j in range(len(lista_valores[i])):
             if lista_valores[i][j].isdigit():
                 lista_valores[i][j] = int(lista_valores[i][j])
-    #pass
+
+
     print(lista_valores)
+    # pass
 
 def translate(lista):
     """Recebe cada lista de valores e transforma-a num padrao de treino.
@@ -161,7 +163,8 @@ def translate(lista):
     padrao_de_saida e uma lista de 0 e 1 que representa o tipo do animal. Tem 7 posicoes e a unica
     que estiver a 1 corresponde ao tipo do animal. E.g., [0 0 1 0 0 0 0] -> reptile.
     """
-    
+    padrao_treino = []
+
     pass
         
 
@@ -192,6 +195,7 @@ if __name__ == "__main__":
     #train_or()
     #train_xor()
     build_sets('zoo.txt')
+
 
 
     #run()
