@@ -144,7 +144,7 @@ def build_sets(f):
             lista_valores.append(linha)
 
 
-    for i in range(len(lista_valores)):
+    for i in range(len(lista_valores)): # coloca os digitos em int
         for j in range(len(lista_valores[i])):
             if lista_valores[i][j].isdigit():
                 lista_valores[i][j] = int(lista_valores[i][j])
