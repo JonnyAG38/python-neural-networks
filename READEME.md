@@ -1,0 +1,1 @@
+This is a python projects that implements neural network training
