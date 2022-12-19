@@ -151,7 +151,7 @@ def build_sets(f):
     conjunto_de_treino = lista_padroes[:67]
     conjunto_de_teste =lista_padroes[67:]
 
-    return conjunto_de_treino, conjunto_de_teste
+    return  conjunto_de_teste
 
 
 
@@ -190,12 +190,22 @@ def translate(lista):
     #pass
 def train_zoo(training_set):
     """cria a rede e chama a funçao iterate para a treinar. Use 300 iteracoes"""
-    
-    pass
+
+    net = make(2, 2, 1)
+    for i in range(300):
+        for j in range(len(training_set)):
+            iterate(i, net, training_set[j][1], training_set[j][3])
+            iterate(i, net, training_set[j][1], training_set[j][3])
+            iterate(i, net, training_set[j][1], training_set[j][3])
+            iterate(i, net, training_set[j][1], training_set[j][3])
+            #iterate(i, net, [1, 1], [0])
+    return net
+
 
 def retranslate(out):
     """recebe o padrao de saida da rede e devolve o tipo de animal corresponte.
     Devolve o tipo de animal corresponde ao indice da saida com maior valor."""
+
     
     pass
 
@@ -205,7 +215,11 @@ def test_zoo(net, test_set):
     do animal que corresponde ao maior valor da lista de saida. O tipo determinado
     pela rede deve ser comparado com o tipo real, sendo contabilizado o número
     de respostas corretas. A função calcula a percentagem de respostas corretas"""
-    
+    for padrao in test_set:
+        forward(net, padrao[1])
+
+
+
     pass
 
 
@@ -215,6 +229,8 @@ if __name__ == "__main__":
     #train_or()
     #train_xor()
     print(build_sets('zoo.txt'))
+    #train_zoo(build_sets('zoo.txt'))
+    #test_zoo(train_zoo(build_sets('zoo.txt')), build_sets('zoo.txt'))
 
 
 
