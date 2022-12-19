@@ -167,7 +167,7 @@ def translate(lista):
     padrao_treino = []
     padroes_de_entrada =[]# lista com lista de atributos
     legs = [0,0,0,0,0,0,0,0,0,0]
-    tipos=['mammal', 'bird', 'reptile', 'fish', 'amphibian', 'insect', 'invertebrate']
+    tipos=['mammal', 'bird', 'reptile', 'fish', 'amphibian', 'bug', 'invertebrate']
     padroes_de_saida=[0,0,0,0,0,0,0]
     for i in range(len(lista)):
         padroes_de_entrada.append(lista[i][1:17])
@@ -176,6 +176,7 @@ def translate(lista):
     for x in range(len(padroes_de_entrada)):# PERNAS
         legs = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         for j in range(len(legs)):
+
             if j == padroes_de_entrada[x][12]: # qd index do legs = ao numero do atributo(numero de pernas) mete essa posiçao a 1
                 legs[j] = 1
         padroes_de_entrada[x] = padroes_de_entrada[x][:12] + legs + padroes_de_entrada[x][13:]
@@ -186,9 +187,18 @@ def translate(lista):
             for j in range(len(tipos)):
                 if tipos[j] == lista[i][17]:
                     padroes_de_saida[j] = 1
+
+aaaaaaaaaaa
+    for i in range(len(lista)):
         padrao_treino.append([lista[i][0], padroes_de_entrada[i], lista[i][17], padroes_de_saida])
 
+
+    print(padrao_treino)
+
+
     #pass
+        
+
 def train_zoo(training_set):
     """cria a rede e chama a funçao iterate para a treinar. Use 300 iteracoes"""
     
