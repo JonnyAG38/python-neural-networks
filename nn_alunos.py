@@ -124,8 +124,22 @@ def train_xor():
 def run():
     """Funcao principal do nosso programa, cria os conjuntos de treino e teste, chama
     a funcao que cria e treina a rede e, por fim, a funcao que a treina"""
-    
-    pass
+
+#conjunto de treino
+    build_sets('zoo.txt')[0]
+
+#conjunto de teste
+    build_sets('zoo.txt')[1]
+    make(2, 1, 1)
+    train_and()
+    train_or()
+    train_xor()
+
+    test_zoo(train_zoo(build_sets('zoo.txt')[0]), build_sets('zoo.txt')[1])
+    update(train_zoo(build_sets('zoo.txt')[0]))
+    test_zoo(train_zoo(build_sets('zoo.txt')[0]), build_sets('zoo.txt')[1])
+
+
     
 
 
@@ -232,9 +246,9 @@ if __name__ == "__main__":
     #train_xor()
     #print(build_sets('zoo.txt'))
     #train_zoo(build_sets('zoo.txt'))
-    test_zoo(train_zoo(build_sets('zoo.txt')[0]), build_sets('zoo.txt')[1])
+    #test_zoo(train_zoo(build_sets('zoo.txt')[0]), build_sets('zoo.txt')[1])
 
 
 
 
-    #run()
+    run()
