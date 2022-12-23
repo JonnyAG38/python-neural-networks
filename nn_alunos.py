@@ -130,10 +130,7 @@ def run():
 
 #conjunto de teste
     build_sets('zoo.txt')[1]
-    make(2, 1, 1)
-    train_and()
-    train_or()
-    train_xor()
+
 
     test_zoo(train_zoo(build_sets('zoo.txt')[0]), build_sets('zoo.txt')[1])
     update(train_zoo(build_sets('zoo.txt')[0]))
@@ -202,17 +199,12 @@ def translate(lista):
     #pass
 def train_zoo(training_set):
     """cria a rede e chama a funçao iterate para a treinar. Use 300 iteracoes"""
-
-    net = make(2, 2, 1)
+    nz = math.ceil(math.sqrt(25*7))
+    net = make(25, nz, 7)
     for i in range(300):
         for j in range(len(training_set)):
             iterate(i, net, training_set[j][1], training_set[j][3])
-            iterate(i, net, training_set[j][1], training_set[j][3])
-            iterate(i, net, training_set[j][1], training_set[j][3])
-            iterate(i, net, training_set[j][1], training_set[j][3])
-            #iterate(i, net, [1, 1], [0])
     return net
-
 
 def retranslate(out):
     """recebe o padrao de saida da rede e devolve o tipo de animal corresponte.
