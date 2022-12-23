@@ -125,19 +125,12 @@ def run():
     """Funcao principal do nosso programa, cria os conjuntos de treino e teste, chama
     a funcao que cria e treina a rede e, por fim, a funcao que a treina"""
 
-#conjunto de treino
-    build_sets('zoo.txt')[0]
-
-#conjunto de teste
-    build_sets('zoo.txt')[1]
 
 
-    test_zoo(train_zoo(build_sets('zoo.txt')[0]), build_sets('zoo.txt')[1])
-    update(train_zoo(build_sets('zoo.txt')[0]))
-    test_zoo(train_zoo(build_sets('zoo.txt')[0]), build_sets('zoo.txt')[1])
+    set_treino, set_teste = build_sets('zoo.txt')
 
-
-    
+    net = train_zoo(set_treino)
+    test_zoo(net, set_teste)
 
 
 def build_sets(f):
@@ -199,7 +192,7 @@ def translate(lista):
     #pass
 def train_zoo(training_set):
     """cria a rede e chama a funçao iterate para a treinar. Use 300 iteracoes"""
-    nz = math.ceil(math.sqrt(25*7))
+    nz = math.ceil(math.sqrt(25*7))#14
     net = make(25, nz, 7)
     for i in range(300):
         for j in range(len(training_set)):
