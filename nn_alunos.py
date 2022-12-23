@@ -4,7 +4,7 @@ import random
 import math
 
 #valor exemplificativo
-alpha = 0.2
+alpha = 0.6
 
 def make(nx, nz, ny):
     """Funcao que cria, inicializa e devolve uma rede neuronal, incluindo
@@ -192,8 +192,8 @@ def translate(lista):
     #pass
 def train_zoo(training_set):
     """cria a rede e chama a funçao iterate para a treinar. Use 300 iteracoes"""
-    nz = math.ceil(math.sqrt(25*7))#14
-    net = make(25, nz, 7)
+
+    net = make(25, 18, 7)
     for i in range(300):
         for j in range(len(training_set)):
             iterate(i, net, training_set[j][1], training_set[j][3])
@@ -220,20 +220,11 @@ def test_zoo(net, test_set):
             count+=1
             print("The network thinks ", padrao[0], " is a ", retranslate(net['y']), " and it is correct")
 
-    print("Success rate: ", count/len(test_set)*100, "%")
+    print("Success rate: ", round(count/len(test_set)*100,2), "%")
 
 
 
 
 if __name__ == "__main__":
-    #train_and()
-    #train_or()
-    #train_xor()
-    #print(build_sets('zoo.txt'))
-    #train_zoo(build_sets('zoo.txt'))
-    #test_zoo(train_zoo(build_sets('zoo.txt')[0]), build_sets('zoo.txt')[1])
-
-
-
 
     run()
