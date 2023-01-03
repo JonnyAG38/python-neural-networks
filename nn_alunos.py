@@ -1,4 +1,4 @@
-"""Colocar o nome dos elementos do grupo"""
+"""Joao Prata / Guilherme Afonso"""
 
 import random
 import math
